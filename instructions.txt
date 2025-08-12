@@ -1,0 +1,50 @@
+YOUTUBE → VEADOTUBE CONTROLLER
+==============================
+
+Channel-based connection (no manual video ID needed).
+Resolves your current live stream using an @handle, channel ID, or channel URL.
+Optional YouTube Data API key recommended for reliability.
+
+----------------------------------------
+SETUP
+----------------------------------------
+1) Install dependencies:
+   pip install -r requirements.txt
+
+2) Edit config.json:
+   - Set "channel_handle": "@YourHandle" (recommended)
+   - (Optional) Add "api_key" for YouTube Data API lookups
+   - (Optional) Use "channel_id" (UC...) or "channel_url"
+   - (Optional) Set "video_id" to force a specific stream
+
+3) In Veadotube Mini, bind hotkeys (F13–F24 or combos) to your expressions.
+
+----------------------------------------
+RUN
+----------------------------------------
+   python main.py
+
+The script will resolve your live VIDEO_ID, connect to chat, and listen for commands: !dance, !happy, etc.
+
+----------------------------------------
+TRUSTED USER COMMANDS
+----------------------------------------
+- !refreshconfig
+  Reloads config.json and re-resolves the live video if needed.
+
+- !enable [expression_key]
+  Enables that expression (e.g., !enable pose3).
+
+- !disable [expression_key]
+  Disables that expression (e.g., !disable pose2).
+
+----------------------------------------
+NOTES
+----------------------------------------
+Resolution order:
+  1) "video_id" (if provided)
+  2) API lookup (requires "api_key" + channel_id/handle)
+  3) Channel /live redirect trick
+
+Key combos like "ctrl+f16" or "alt+shift+f17" are supported in config.json.
+

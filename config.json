@@ -1,0 +1,17 @@
+{
+  "api_key": "",                 
+  "channel_handle": "@YourHandle",
+  "channel_id": "",
+  "channel_url": "",
+  "video_id": "",
+
+  "trusted_users": ["YourChannelName", "Friend1", "Friend2"],
+
+  "expressions": {
+    "pose1": { "command": "dance", "enabled": true,  "key": "f13" },
+    "pose2": { "command": "angry", "enabled": false, "key": "f15" },
+    "pose3": { "command": "happy", "enabled": true,  "key": "Shift+f13" }
+  },
+
+  "cooldown_seconds": 2
+}
